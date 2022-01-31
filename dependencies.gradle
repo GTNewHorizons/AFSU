@@ -1,0 +1,5 @@
+// Add your dependencies here
+
+dependencies {
+    compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
+}
