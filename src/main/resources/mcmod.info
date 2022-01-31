@@ -1,0 +1,14 @@
+[{
+    "modid": "${modId}",
+    "name": "${modName}",
+    "description": "An addon to IC2 that adds a tier five energy storage unit.",
+    "version": "${modVersion}",
+    "mcversion": "${minecraftVersion}",
+    "url": "https://github.com/GTNewHorizons/AFSU",
+    "updateUrl": "",
+    "authorList": ["xbony2"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": ["ic2"]
+}]
