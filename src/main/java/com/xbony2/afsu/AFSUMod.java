@@ -19,10 +19,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = AFSUMod.AFSU_MODID, name = "AFSU Mod", version = "@VERSION@", dependencies = "required-after:IC2")
+@Mod(modid = AFSUMod.AFSU_MODID, name = "GRADLETOKEN_MODNAME", version = "GRADLETOKEN_VERSION", dependencies = "required-after:IC2")
 public class AFSUMod {
 
-    public static final String AFSU_MODID = "AFSU";
+    public static final String AFSU_MODID = "GRADLETOKEN_MODID";
 
 	@Instance(AFSUMod.AFSU_MODID)
 	public static AFSUMod instance;
