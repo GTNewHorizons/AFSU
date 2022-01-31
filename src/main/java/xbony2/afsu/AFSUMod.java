@@ -1,5 +1,6 @@
 package xbony2.afsu;
 
+import cpw.mods.fml.common.Loader;
 import xbony2.afsu.blocks.AFSUBlock;
 import xbony2.afsu.blocks.ItemBlockAFSU;
 import xbony2.afsu.gui.GuiHandler;
@@ -42,17 +43,19 @@ public class AFSUMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event){
         NetworkRegistry.INSTANCE.registerGuiHandler(AFSUMod.instance, new GuiHandler());
-		Recipes.advRecipes.addRecipe(new ItemStack(ALC),
-			"GIG", "IUI", "GIG",
-				'G', IC2Items.getItem("glassFiberCableItem"),
-				'I', IC2Items.getItem("iridiumPlate"),
-				'U', IC2Items.getItem("uuMatterCell"));
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(AFSU),
-			"MGM", "IAI", "MGM",
-				'I', IC2Items.getItem("iridiumPlate"),
-				'G', IC2Items.getItem("glassFiberCableItem"),
-				'M', IC2Items.getItem("mfsUnit"),
-				'A', AFSUMod.ALC);
+		if(!Loader.isModLoaded("dreamcraft")) {
+			Recipes.advRecipes.addRecipe(new ItemStack(ALC),
+					"GIG", "IUI", "GIG",
+					'G', IC2Items.getItem("glassFiberCableItem"),
+					'I', IC2Items.getItem("iridiumPlate"),
+					'U', IC2Items.getItem("uuMatterCell"));
+
+			Recipes.advRecipes.addRecipe(new ItemStack(AFSU),
+					"MGM", "IAI", "MGM",
+					'I', IC2Items.getItem("iridiumPlate"),
+					'G', IC2Items.getItem("glassFiberCableItem"),
+					'M', IC2Items.getItem("mfsUnit"),
+					'A', AFSUMod.ALC);
+		}
 	}
 }
