@@ -1,16 +1,15 @@
 package xbony2.afsu;
 
-import cpw.mods.fml.common.Loader;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
 import xbony2.afsu.blocks.AFSUBlock;
 import xbony2.afsu.blocks.ItemBlockAFSU;
 import xbony2.afsu.gui.GuiHandler;
 import xbony2.afsu.items.AFB;
 import xbony2.afsu.tileentity.TileEntityAFSU;
-import ic2.api.item.IC2Items;
-import ic2.api.recipe.Recipes;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -18,44 +17,63 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import ic2.api.item.IC2Items;
+import ic2.api.recipe.Recipes;
 
-@Mod(modid = AFSUMod.AFSU_MODID, name = "GRADLETOKEN_MODNAME", version = "GRADLETOKEN_VERSION", dependencies = "required-after:IC2")
+@Mod(
+        modid = AFSUMod.AFSU_MODID,
+        name = "GRADLETOKEN_MODNAME",
+        version = "GRADLETOKEN_VERSION",
+        dependencies = "required-after:IC2")
 public class AFSUMod {
 
     public static final String AFSU_MODID = "GRADLETOKEN_MODID";
 
-	@Instance(AFSUMod.AFSU_MODID)
-	public static AFSUMod instance;
+    @Instance(AFSUMod.AFSU_MODID)
+    public static AFSUMod instance;
 
-	public static final Block AFSU = new AFSUBlock();
-	public static final Item ALC = new AFB();
+    public static final Block AFSU = new AFSUBlock();
+    public static final Item ALC = new AFB();
 
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event){
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
 
         GameRegistry.registerTileEntity(TileEntityAFSU.class, "AFSU");
 
-		GameRegistry.registerBlock(AFSU, ItemBlockAFSU.class, "AFSU");
-		GameRegistry.registerItem(ALC, "ALC");
-	}
+        GameRegistry.registerBlock(AFSU, ItemBlockAFSU.class, "AFSU");
+        GameRegistry.registerItem(ALC, "ALC");
+    }
 
-	@EventHandler
-	public void init(FMLInitializationEvent event){
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(AFSUMod.instance, new GuiHandler());
-		if(!Loader.isModLoaded("dreamcraft")) {
-			Recipes.advRecipes.addRecipe(new ItemStack(ALC),
-					"GIG", "IUI", "GIG",
-					'G', IC2Items.getItem("glassFiberCableItem"),
-					'I', IC2Items.getItem("iridiumPlate"),
-					'U', IC2Items.getItem("uuMatterCell"));
+        if (!Loader.isModLoaded("dreamcraft")) {
+            Recipes.advRecipes.addRecipe(
+                    new ItemStack(ALC),
+                    "GIG",
+                    "IUI",
+                    "GIG",
+                    'G',
+                    IC2Items.getItem("glassFiberCableItem"),
+                    'I',
+                    IC2Items.getItem("iridiumPlate"),
+                    'U',
+                    IC2Items.getItem("uuMatterCell"));
 
-			Recipes.advRecipes.addRecipe(new ItemStack(AFSU),
-					"MGM", "IAI", "MGM",
-					'I', IC2Items.getItem("iridiumPlate"),
-					'G', IC2Items.getItem("glassFiberCableItem"),
-					'M', IC2Items.getItem("mfsUnit"),
-					'A', AFSUMod.ALC);
-		}
-	}
+            Recipes.advRecipes.addRecipe(
+                    new ItemStack(AFSU),
+                    "MGM",
+                    "IAI",
+                    "MGM",
+                    'I',
+                    IC2Items.getItem("iridiumPlate"),
+                    'G',
+                    IC2Items.getItem("glassFiberCableItem"),
+                    'M',
+                    IC2Items.getItem("mfsUnit"),
+                    'A',
+                    AFSUMod.ALC);
+        }
+    }
 }
