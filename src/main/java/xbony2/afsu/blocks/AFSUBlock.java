@@ -148,8 +148,7 @@ public class AFSUBlock extends Block {
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityliving, ItemStack itemStack) {
         TileEntity tile = world.getTileEntity(x, y, z);
-        if (tile instanceof TileEntityElectricBlock) {
-            TileEntityElectricBlock electricBlock = (TileEntityElectricBlock) tile;
+        if (tile instanceof TileEntityElectricBlock electricBlock) {
             NBTTagCompound nbt = StackUtil.getOrCreateNbtData(itemStack);
             electricBlock.energy = nbt.getDouble("energy");
             if (entityliving == null) electricBlock.setFacing(convertIntegerToShort(1));
@@ -170,8 +169,7 @@ public class AFSUBlock extends Block {
     @Override
     public int getComparatorInputOverride(World world, int x, int y, int z, int side) {
         TileEntity tile = world.getTileEntity(x, y, z);
-        if (tile instanceof TileEntityElectricBlock) {
-            TileEntityElectricBlock teb = (TileEntityElectricBlock) tile;
+        if (tile instanceof TileEntityElectricBlock teb) {
             return (int) Math.round(Util.map(teb.energy, teb.maxStorage, 15.0D));
         }
 
@@ -193,8 +191,7 @@ public class AFSUBlock extends Block {
         if (axis == ForgeDirection.UNKNOWN) return false;
         TileEntity tileEntity = worldObj.getTileEntity(x, y, z);
 
-        if ((tileEntity instanceof IWrenchable)) {
-            IWrenchable te = (IWrenchable) tileEntity;
+        if ((tileEntity instanceof IWrenchable te)) {
 
             short newFacing = convertIntegerToShort(
                     ForgeDirection.getOrientation(te.getFacing()).getRotation(axis).ordinal());
@@ -241,8 +238,7 @@ public class AFSUBlock extends Block {
         if (world.isRemote) return;
 
         TileEntity tile = world.getTileEntity(xCoord, yCoord, zCoord);
-        if (tile instanceof IInventory) {
-            IInventory inventory = (IInventory) tile;
+        if (tile instanceof IInventory inventory) {
             for (int j1 = 0; j1 < inventory.getSizeInventory(); ++j1) {
                 ItemStack itemstack = inventory.getStackInSlot(j1);
                 if (itemstack != null) {
