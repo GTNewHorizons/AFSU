@@ -55,70 +55,46 @@ public class AFSUBlock extends Block {
     public IIcon getIcon(IBlockAccess iBlockAccess, int x, int y, int z, int side) {
         TileEntity tile = iBlockAccess.getTileEntity(x, y, z);
         if (tile instanceof TileEntityBlock) {
-            switch ((int) ((TileEntityBlock) tile).getFacing()) {
-                case 0:// Up
+            return switch ((int) ((TileEntityBlock) tile).getFacing()) {
+                case 0 -> // Up
                     switch (side) {
-                        case 2:
-                        case 3:
-                            return this.top;
-                        case 0:
-                            return this.output;
-                        default:
-                            return this.input;
-                    }
-                case 1:// Down
+                        case 2, 3 -> this.top;
+                        case 0 -> this.output;
+                        default -> this.input;
+                    };
+                case 1 -> // Down
                     switch (side) {
-                        case 2:
-                        case 3:
-                            return this.top;
-                        case 1:
-                            return this.output;
-                        default:
-                            return this.input;
-                    }
-                case 2:// South
+                        case 2, 3 -> this.top;
+                        case 1 -> this.output;
+                        default -> this.input;
+                    };
+                case 2 -> // South
                     switch (side) {
-                        case 0:
-                        case 1:
-                            return this.top;
-                        case 2:
-                            return this.output;
-                        default:
-                            return this.input;
-                    }
-                case 3:// North
+                        case 0, 1 -> this.top;
+                        case 2 -> this.output;
+                        default -> this.input;
+                    };
+                case 3 -> // North
                     switch (side) {
-                        case 0:
-                        case 1:
-                            return this.top;
-                        case 3:
-                            return this.output;
-                        default:
-                            return this.input;
-                    }
-                case 4:// East
+                        case 0, 1 -> this.top;
+                        case 3 -> this.output;
+                        default -> this.input;
+                    };
+                case 4 -> // East
                     switch (side) {
-                        case 0:
-                        case 1:
-                            return this.top;
-                        case 4:
-                            return this.output;
-                        default:
-                            return this.input;
-                    }
-                case 5:// West
+                        case 0, 1 -> this.top;
+                        case 4 -> this.output;
+                        default -> this.input;
+                    };
+                case 5 -> // West
                     switch (side) {
-                        case 0:
-                        case 1:
-                            return this.top;
-                        case 5:
-                            return this.output;
-                        default:
-                            return this.input;
-                    }
-                default:// Unknown
-                    return input;
-            }
+                        case 0, 1 -> this.top;
+                        case 5 -> this.output;
+                        default -> this.input;
+                    };
+                default -> // Unknown
+                    input;
+            };
         }
 
         return null;
@@ -130,15 +106,11 @@ public class AFSUBlock extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata) {
-        switch (side) {
-            case 0:
-            case 1:
-                return this.top;
-            case 3:
-                return this.output;
-            default:
-                return this.input;
-        }
+        return switch (side) {
+            case 0, 1 -> this.top;
+            case 3 -> this.output;
+            default -> this.input;
+        };
     }
 
     @Override
