@@ -55,7 +55,7 @@ public class AFSUBlock extends Block {
     public IIcon getIcon(IBlockAccess iBlockAccess, int x, int y, int z, int side) {
         TileEntity tile = iBlockAccess.getTileEntity(x, y, z);
         if (tile instanceof TileEntityBlock) {
-            switch (new Short(((TileEntityBlock) tile).getFacing()).intValue()) {
+            switch ((int) ((TileEntityBlock) tile).getFacing()) {
                 case 0:// Up
                     switch (side) {
                         case 2:
@@ -194,7 +194,7 @@ public class AFSUBlock extends Block {
     }
 
     private static short convertIntegerToShort(int integer_n) {
-        return new Integer(integer_n).shortValue();
+        return (short) integer_n;
     }
 
     @Override
@@ -207,7 +207,7 @@ public class AFSUBlock extends Block {
         TileEntity tile = world.getTileEntity(x, y, z);
         if (tile instanceof TileEntityElectricBlock) {
             TileEntityElectricBlock teb = (TileEntityElectricBlock) tile;
-            return new Long(Math.round(Util.map(teb.energy, teb.maxStorage, 15.0D))).intValue();
+            return (int) Math.round(Util.map(teb.energy, teb.maxStorage, 15.0D));
         }
 
         return super.getComparatorInputOverride(world, x, y, z, side);
