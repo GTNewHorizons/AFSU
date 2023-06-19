@@ -59,7 +59,6 @@ public class AFSUBlock extends Block {
                 case 0:// Up
                     switch (side) {
                         case 2:
-                            return this.top;
                         case 3:
                             return this.top;
                         case 0:
@@ -70,7 +69,6 @@ public class AFSUBlock extends Block {
                 case 1:// Down
                     switch (side) {
                         case 2:
-                            return this.top;
                         case 3:
                             return this.top;
                         case 1:
@@ -81,7 +79,6 @@ public class AFSUBlock extends Block {
                 case 2:// South
                     switch (side) {
                         case 0:
-                            return this.top;
                         case 1:
                             return this.top;
                         case 2:
@@ -92,7 +89,6 @@ public class AFSUBlock extends Block {
                 case 3:// North
                     switch (side) {
                         case 0:
-                            return this.top;
                         case 1:
                             return this.top;
                         case 3:
@@ -103,7 +99,6 @@ public class AFSUBlock extends Block {
                 case 4:// East
                     switch (side) {
                         case 0:
-                            return this.top;
                         case 1:
                             return this.top;
                         case 4:
@@ -114,7 +109,6 @@ public class AFSUBlock extends Block {
                 case 5:// West
                     switch (side) {
                         case 0:
-                            return this.top;
                         case 1:
                             return this.top;
                         case 5:
@@ -138,7 +132,6 @@ public class AFSUBlock extends Block {
     public IIcon getIcon(int side, int metadata) {
         switch (side) {
             case 0:
-                return this.top;
             case 1:
                 return this.top;
             case 3:
