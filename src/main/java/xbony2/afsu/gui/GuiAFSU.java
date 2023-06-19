@@ -100,15 +100,15 @@ public class GuiAFSU extends GuiContainer {
         int j = (this.width - this.xSize) / 2; // Good here
         int k = (this.height - this.ySize) / 2; // good here
         this.drawTexturedModalRect(j, k, 0, 0, this.xSize, this.ySize);// Renders the actual gui texture.
-        if (container.base.energy > 0.0D) {
-            // Calculates the current energy in AFSU
-            int i1 = (int) ((ConfigHandler.AFSUbarWidth * container.base.getChargeLevel()) / 1.6D + 5.0D);
+        if (container.base.energy > 0) {
+            int afsuCurrentEnergy = (int) ((ConfigHandler.AFSUbarWidth * container.base.getChargeLevel()) / 1.6D
+                    + 5.0D);
             drawTexturedModalRect(
                     j + ConfigHandler.AFSUBarxPlacement,
                     k + ConfigHandler.AFSUBaryPlacement,
                     ConfigHandler.AFSUBarxLocation,
                     ConfigHandler.AFSUBaryLocation,
-                    i1 + 1,
+                    afsuCurrentEnergy + 1,
                     ConfigHandler.AFSUBarHeight);// Renders the blue energy bar.
         }
     }
