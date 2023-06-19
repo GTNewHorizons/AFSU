@@ -9,13 +9,13 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import xbony2.afsu.ConfigHandler;
-import xbony2.afsu.container.ContainerAFSU;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.core.GuiIconButton;
 import ic2.core.IC2;
 import ic2.core.util.GuiTooltipHelper;
+import xbony2.afsu.ConfigHandler;
+import xbony2.afsu.container.ContainerAFSU;
 
 @SideOnly(Side.CLIENT)
 public class GuiAFSU extends GuiContainer {

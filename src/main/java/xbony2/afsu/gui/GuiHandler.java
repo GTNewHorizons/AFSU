@@ -4,11 +4,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-import xbony2.afsu.container.ContainerAFSU;
-import xbony2.afsu.tileentity.TileEntityAFSU;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import xbony2.afsu.container.ContainerAFSU;
+import xbony2.afsu.tileentity.TileEntityAFSU;
 
 public class GuiHandler implements IGuiHandler {
 
