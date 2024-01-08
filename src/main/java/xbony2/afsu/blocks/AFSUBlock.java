@@ -21,9 +21,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import xbony2.afsu.AFSUMod;
-import xbony2.afsu.ConfigHandler;
-import xbony2.afsu.tileentity.TileEntityAFSU;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.IC2Items;
@@ -33,6 +30,9 @@ import ic2.core.block.TileEntityBlock;
 import ic2.core.block.wiring.TileEntityElectricBlock;
 import ic2.core.util.StackUtil;
 import ic2.core.util.Util;
+import xbony2.afsu.AFSUMod;
+import xbony2.afsu.ConfigHandler;
+import xbony2.afsu.tileentity.TileEntityAFSU;
 
 public class AFSUBlock extends Block {
 

@@ -4,11 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-import xbony2.afsu.blocks.AFSUBlock;
-import xbony2.afsu.blocks.ItemBlockAFSU;
-import xbony2.afsu.gui.GuiHandler;
-import xbony2.afsu.items.AFB;
-import xbony2.afsu.tileentity.TileEntityAFSU;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -19,6 +14,11 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
+import xbony2.afsu.blocks.AFSUBlock;
+import xbony2.afsu.blocks.ItemBlockAFSU;
+import xbony2.afsu.gui.GuiHandler;
+import xbony2.afsu.items.AFB;
+import xbony2.afsu.tileentity.TileEntityAFSU;
 
 @Mod(
         modid = AFSUMod.AFSU_MODID,
