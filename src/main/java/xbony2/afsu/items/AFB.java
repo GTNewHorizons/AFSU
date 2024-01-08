@@ -5,11 +5,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-import xbony2.afsu.ConfigHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.IElectricItem;
 import ic2.core.IC2;
+import xbony2.afsu.ConfigHandler;
 
 public class AFB extends Item implements IElectricItem {
 

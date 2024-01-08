@@ -4,11 +4,11 @@ import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 
-import xbony2.afsu.ConfigHandler;
-import xbony2.afsu.tileentity.TileEntityAFSU;
 import ic2.core.ContainerFullInv;
 import ic2.core.slot.SlotArmor;
 import ic2.core.slot.SlotInvSlot;
+import xbony2.afsu.ConfigHandler;
+import xbony2.afsu.tileentity.TileEntityAFSU;
 
 public class ContainerAFSU extends ContainerFullInv<TileEntityAFSU> {
 
